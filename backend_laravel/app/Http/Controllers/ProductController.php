@@ -23,8 +23,8 @@ class ProductController extends Controller
     {
        $product = new Product();
        $product->name = $request->name;
-       $product->description = $request->description;
        $product->price = $request->price;
+       $product->description = $request->description;
        $product->image = $request->image;
        
 
@@ -36,15 +36,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
+        $product = Product::find($product->id);
+        return $product;
     }
 
     /**
@@ -52,7 +45,13 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $product = Product::findOrFail($request->id);
+        $product->name = $request->name;
+        $product->price = $request->price;
+        $product->description = $request->description;
+        $product->image = $request->image;
+        $product->save();
+        return $product;
     }
 
     /**
@@ -60,6 +59,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product = Product::destroy($product->id);
+       return $product;
     }
 }
