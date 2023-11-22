@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import { Grid } from "@mui/material";
 import Button from '@mui/material/Button';
 
-const endpoint = 'http://localhost:8000/api/product/'
+const endpoint = 'http://localhost:8000/api/products/'
 
 const CreateProduct = () => {
 

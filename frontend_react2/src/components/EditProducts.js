@@ -5,6 +5,7 @@ import { Box } from "@mui/system";
 import { TextField } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Grid } from "@mui/material";
+import { Button } from "@mui/material";
 
 const endpoint = 'http://localhost:8000/api/product/'
 
@@ -88,6 +89,10 @@ const EditProduct = () => {
                 </Grid>
             
             </Grid>
+
+            <Button type='submit' variant="contained">
+                        Editar
+            </Button>
             
 
             
